@@ -22,100 +22,121 @@
   .muted{color:#666;font-size:0.9rem}
   .tryagain{color:#c0392b;margin-top:0.5rem}
 </style>
+<script src="https://www.youtube.com/iframe_api"></script>
 </head>
 <body>
-<div class="container">
-  <header>
-    <h1>Weiterführende Seite zur Zahlungsaufforderung</h1>
-    <p class="muted">Beantworte die drei Fragen, um deine Echtheit zu überprüfen</p>
-  </header>
+  <div class="container">
+    <header>
+      <h1>Weiterführende Seite zur Zahlungsaufforderung</h1>
+      <p class="muted">Beantworte die drei Fragen, um deine Echtheit zu überprüfen</p>
+    </header>
 
-  <section class="ticket">
-    <div class="row">
-      <div class="col">
-        <div class="content" id="secretContent">
-          <h2>Alles Gute! 🎉</h2>
-          <p>Haha, erwischt — hier ist dein Geburtsags-Video und ein paar Beweisfotos.</p>
-         <div class="row" style="align-items:flex-start">
-          <div class="col">
-            <img src="markus6.png" alt="Foto 1">
-          </div>
-          <div class="col">
-            <img src="markus4.jpg" alt="Foto 2">
-          </div>
-          </div>
-          <div style="margin-top:1rem;text-align:center">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/fJjnFV0YRdw?autoplay=0&mute=1" 
+    <section class="ticket">
+      <div class="row">
+        <div class="col">
+          <div class="content" id="secretContent">
+            <h2>Alles Gute! 🎉</h2>
+            <p>Haha, erwischt — hier ist dein Geburtsags-Video und ein paar Beweisfotos.</p>
+            <div class="row" style="align-items:flex-start">
+              <div class="col">
+                <img src="markus6.png" alt="Foto 1">
+              </div>
+              <div class="col">
+                <img src="markus4.jpg" alt="Foto 2">
+              </div>
+            </div>
+            <div style="margin-top:1rem;text-align:center">
+              <iframe id="youtubeVideo" width="315" height="560" src="https://www.youtube.com/embed/fJjnFV0YRdw?enablejsapi=1"
                   title="Geburtstagsvideo" frameborder="0" 
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-            </iframe>
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <audio id="birthdayMusic" src="markus.mp3"></audio>
           </div>
-          <audio id="birthdayMusic" src="markus.mp3" type="audio/mpeg"></audio>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal / Quiz -->
+  <div class="overlay" id="quizModal">
+    <div class="modal">
+      <h3>Bist du wirklich ein Mensch?</h3>
+      <p class="muted">Beantworte diese 3 einfachen Fragen richtig, dann wirst du automatisch weitergeleitet</p>
+      <div>
+        <div class="q">
+          <label>1) Mein Lieblingsverkehrsmittel wenn es mal schnell gehen soll, ist die ...?</label>
+          <input id="a1" type="text" placeholder="Zwei Wörter">
+        </div>
+        <div class="q">
+          <label>2) Es ist 21 Uhr abends und ich brauche noch eine Zahnbürste, wen rufe ich an?</label>
+          <input id="a2" type="text" placeholder="Name">
+        </div>
+        <div class="q">
+          <label>3) Gib das Codewort ein, welches sich auf deinem Strafzettel verbirgt!</label>
+          <input id="a3" type="text" placeholder="hmm oder mhhh?">
+        </div>
+        <div style="display:flex;gap:.6rem;align-items:center">
+          <button id="checkBtn">Antwort prüfen</button>
+          <div class="tryagain" id="err" style="display:none">Falsche Antworten — nochmal!</div>
         </div>
       </div>
     </div>
-  </section>
-</div>
-
-<!-- Modal / Quiz -->
-<div class="overlay" id="quizModal">
-  <div class="modal">
-    <h3>Bist du wirklich ein Mensch?</h3>
-    <p class="muted">Beantworte diese 3 einfachen Fragen richtig, dann wirst du automatisch weitergeleitet</p>
-    <div>
-      <div class="q">
-        <label>1) Mein Lieblingsverkehrsmittel wenn es mal schnell gehen soll, ist die ...?</label>
-        <input id="a1" type="text" placeholder="Zwei Wörter">
-      </div>
-      <div class="q">
-        <label>2) Es ist 21 Uhr abends und ich brauche noch eine Zahnbürste, wen rufe ich an?</label>
-        <input id="a2" type="text" placeholder="Name">
-      </div>
-      <div class="q">
-        <label>3) Gib das Codewort ein, welches sich auf deinem Strafzettel verbirgt!</label>
-        <input id="a3" type="text" placeholder="hmm oder mhhh?">
-      </div>
-      <div style="display:flex;gap:.6rem;align-items:center">
-        <button id="checkBtn">Antwort prüfen</button>
-        <div class="tryagain" id="err" style="display:none">Falsche Antworten — nochmal!</div>
-      </div>
-    </div>
   </div>
-</div>
 
-<script>
-  // Setze hier die korrekten Antworten (kleinbuchstaben).
-  const answers = {
-    q1: "deutsche bahn",     // month in lower case
-    q2: "daniel",      // name as string
-    q3: "skyr"   // codeword
-  };
-
-  const el = id => document.getElementById(id);
-  el('checkBtn').addEventListener('click', ()=>{
-    const v1 = (el('a1').value||"").trim().toLowerCase();
-    const v2 = (el('a2').value||"").trim().toLowerCase();
-    const v3 = (el('a3').value||"").trim().toLowerCase();
-    if(v1===answers.q1 && v2===answers.q2 && v3===answers.q3){
-      // correct
-      document.getElementById('quizModal').style.display='none';
-      document.getElementById('secretContent').style.display='block';
-      
-      // Start audio playback
-      el('birthdayMusic').play();
-    } else {
-      // wrong
-      const err = el('err'); err.style.display='block';
-      setTimeout(()=>err.style.display='none',1800);
+  <!-- JavaScript -->
+  <script>
+    // Setup YouTube Player API
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('youtubeVideo', {
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      });
     }
-  });
 
-  // optional: Enter key submits
-  ['a1','a2','a3'].forEach(id=>{
-    el(id).addEventListener('keydown', e=>{
-      if(e.key === 'Enter') el('checkBtn').click();
+    const el = id => document.getElementById(id);
+    const birthdayMusic = el('birthdayMusic');
+
+    function onPlayerStateChange(event) {
+      if (event.data == YT.PlayerState.PLAYING) {
+        birthdayMusic.pause();
+      } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
+        birthdayMusic.play();
+      }
+    }
+
+    // Setze hier die korrekten Antworten (kleinbuchstaben).
+    const answers = {
+      q1: "deutsche bahn",     // month in lower case
+      q2: "daniel",      // name as string
+      q3: "skyr"   // codeword
+    };
+
+    el('checkBtn').addEventListener('click', ()=>{
+      const v1 = (el('a1').value||"").trim().toLowerCase();
+      const v2 = (el('a2').value||"").trim().toLowerCase();
+      const v3 = (el('a3').value||"").trim().toLowerCase();
+      if(v1===answers.q1 && v2===answers.q2 && v3===answers.q3){
+        // correct
+        document.getElementById('quizModal').style.display='none';
+        document.getElementById('secretContent').style.display='block';
+        
+        // Start audio playback
+        birthdayMusic.play();
+      } else {
+        // wrong
+        const err = el('err'); err.style.display='block';
+        setTimeout(()=>err.style.display='none',1800);
+      }
     });
-  });
-</script>
+
+    // optional: Enter key submits
+    ['a1','a2','a3'].forEach(id=>{
+      el(id).addEventListener('keydown', e=>{
+        if(e.key === 'Enter') el('checkBtn').click();
+      });
+    });
+  </script>
 </body>
 </html>
