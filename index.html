@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Geheimer Geburtstagstest</title>
+<title>Happy Birthday Rennsemmel</title>
 <style>
   body{font-family:system-ui,-apple-system,Arial,sans-serif;background:#f4f6f8;color:#111;margin:0}
   .container{max-width:900px;margin:2rem auto;padding:1rem}
@@ -26,8 +26,8 @@
 <body>
 <div class="container">
   <header>
-    <h1>OFFIZIELL-UNOFFIZIELL: Geburtstagszugang</h1>
-    <p class="muted">Beantworte die drei Fragen — nur für echte Fans 😉</p>
+    <h1>Weiterführender Link zur Zahlungsaufforderung</h1>
+    <p class="muted">Beantworte die drei Fragen, um deine Echtheit zu überprüfen</p>
   </header>
 
   <section class="ticket">
@@ -35,7 +35,7 @@
       <div class="col">
         <div class="content" id="secretContent">
           <h2>Alles Gute! 🎉</h2>
-          <p>Haha, erwischt — hier ist dein Video und ein paar Beweisfotos.</p>
+          <p>Haha, erwischt — hier ist dein Geburtsags-Video und ein paar Beweisfotos.</p>
           <div class="row" style="align-items:flex-start">
             <div class="col">
               <img src="BILD1_URL" alt="Foto 1">
@@ -57,20 +57,20 @@
 <!-- Modal / Quiz -->
 <div class="overlay" id="quizModal">
   <div class="modal">
-    <h3>Mini-Quiz für Zutritt</h3>
-    <p class="muted">Beantworte 3 einfache Fragen richtig, dann bekommst du die Überraschung.</p>
+    <h3>Bist du wirklich ein Mensch?</h3>
+    <p class="muted">Beantworte diese 3 einfachen Fragen richtig, dann wirst du automatisch weitergeleitet</p>
     <div>
       <div class="q">
-        <label>1) In welchem Monat fand der „Vorfall“ mit dem Auto statt? (nur Monat)</label>
+        <label>1) Mein Libelingsverkehrsmittel wenn es mal schnell gehen soll ist, die ...?</label>
         <input id="a1" type="text" placeholder="z.B. Mai">
       </div>
       <div class="q">
-        <label>2) Wie viele km/h zu schnell war es laut deinem Bruder (nur Zahl)?</label>
+        <label>2) Es ist 21 Uhr abends und ich brauche noch eine Zahnbürste, wen rufe ich an?</label>
         <input id="a2" type="text" placeholder="z.B. 25">
       </div>
       <div class="q">
-        <label>3) Nenne das Codewort: (z.B. Kuchen)</label>
-        <input id="a3" type="text" placeholder="z.B. Kuchen">
+        <label>3) Gib das Codewort ein, welches sich auf deinem Strafzettel verbirgt!</label>
+        <input id="a3" type="text" placeholder="Wir suchen einen Namen">
       </div>
       <div style="display:flex;gap:.6rem;align-items:center">
         <button id="checkBtn">Antwort prüfen</button>
@@ -84,9 +84,9 @@
 <script>
   // Setze hier die korrekten Antworten (kleinbuchstaben).
   const answers = {
-    q1: "mai",     // month in lower case
-    q2: "25",      // number as string
-    q3: "kuchen"   // codeword
+    q1: "deutsche bahn",     // month in lower case
+    q2: "daniel",      // number as string
+    q3: "skyr"   // codeword
   };
 
   const el = id => document.getElementById(id);
