@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Happy Birthday Rennsemmel</title>
+<title>Happy Birthday Papa</title>
 <style>
   body{font-family:system-ui,-apple-system,Arial,sans-serif;background:#f4f6f8;color:#111;margin:0}
   .container{max-width:900px;margin:2rem auto;padding:1rem}
@@ -27,7 +27,7 @@
 <body>
   <div class="container">
     <header>
-      <h1>Weiterführende Seite zur Zahlungsaufforderung</h1>
+      <h1>Hier bist du richtig, ein kleines Dankeschön für dich!</h1>
       <p class="muted">Beantworte die drei Fragen, um deine Echtheit zu überprüfen</p>
     </header>
 
@@ -36,8 +36,8 @@
         <div class="col">
           <div class="content" id="secretContent">
             <h2>Alles Gute! 🎉</h2>
-            <p>Haha, erwischt — hier ist deine Geburtsags-Website inklusive Beweisfoto!</p>
-            <p>🎈 DER KUCHEN WAR SEHR SEHR LECKER </p>
+            <p>Spitze — hier ist deine Geburtsags-Website nur für dich!</p>
+            <p>🎈 Ich freue mich, dass wir dich heute gemeinsam feiern dürfen 🎈 </p>
             
             
             
@@ -45,21 +45,21 @@
               
             </p>
             
-            <p>Happy Birthday, Markus! 🎈</p>
+            <p>Happy Birthday, Papa! 🎈</p>
             <p>Es ist soweit, deine Geburtstagsfeier steht an, heute an diesem besonderen Tag wollen wir dich feiern und an 
               die vielen unvergesslichen Momente denken, die wir gemeinsam geteilt haben.</p>
-            <p>Hier ist ein Foto von diesem einmaligen Moment, mitlerweile denke ich, dass du den Blitz einfach magisch anziehst!</p>
+            <p>Hier ein Foto, an das ich mich gerne zurück erinnere!</p>
             <p>Möge dein neues Lebensjahr genauso rasant, lustig und voller Freude sein, wir haben dich alle ganz dolle lieb! 🎉😊</p>
             <div class="row" style="align-items:flex-start">
               <div class="col">
-                <img src="markus6.png" alt="Foto 1">
+                <img src="papa1.jpg" alt="Foto 1">
               </div>
               <div class="col">
-                <img src="markus4.jpg" alt="Foto 2">
+                <img src="papa2.jpg" alt="Foto 2">
               </div>
             </div>
             <div style="margin-top:1rem;text-align:center">
-              <iframe id="youtubeVideo" width="315" height="560" src="https://www.youtube.com/embed/fJjnFV0YRdw?enablejsapi=1"
+              <iframe id="youtubeVideo" width="315" height="560" src="https://www.youtube.com/shorts/0hl3j3srn-g?si=FDjpd0vBgd2OmWpY"
                   title="Geburtstagsvideo" frameborder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -73,20 +73,20 @@
   <!-- Modal / Quiz -->
   <div class="overlay" id="quizModal">
     <div class="modal">
-      <h3>Bist du wirklich ein Mensch?</h3>
+      <h3>Bist du es Papa??</h3>
       <p class="muted">Beantworte diese 3 einfachen Fragen richtig, dann wirst du automatisch weitergeleitet</p>
       <div>
         <div class="q">
-          <label>1) Mein Lieblingsverkehrsmittel wenn es mal schnell gehen soll, ist die ...?</label>
-          <input id="a1" type="text" placeholder="Zwei Wörter">
+          <label>1) Wie heißt unsere Lieblingsserie die wir zwei ganz oft zusammen geschaut haben?</label>
+          <input id="a1" type="text" placeholder="Die Lösung besteht aus 3 Bereichen mit Leerzeichen getrennt">
         </div>
         <div class="q">
-          <label>2) Es ist 21 Uhr abends und ich brauche noch eine Zahnbürste, wen rufe ich an?</label>
-          <input id="a2" type="text" placeholder="Name">
+          <label>2) Wie heißt unsere Spülmaschine?</label>
+          <input id="a2" type="text" placeholder="Der Name ist ein Palindrom">
         </div>
         <div class="q">
-          <label>3) Gib das Codewort ein, welches sich auf deinem Strafzettel verbirgt!</label>
-          <input id="a3" type="text" placeholder="hmm oder mhhh?">
+          <label>3) Und nun die letzte Frage aller Fragen, wie jung wirst du heute?</label>
+          <input id="a3" type="text" placeholder="Vermutlich die schwierigste Frage">
         </div>
         <div style="display:flex;gap:.6rem;align-items:center">
           <button id="checkBtn">Antwort prüfen</button>
@@ -121,9 +121,9 @@
 
     // Setze hier die korrekten Antworten (kleinbuchstaben).
     const answers = {
-      q1: "deutsche bahn",     // month in lower case
-      q2: "daniel",      // name as string
-      q3: "skyr"   // codeword
+      q1: "hawaii five o",     // month in lower case
+      q2: "anna",      // name as string
+      q3: "58"   // codeword
     };
 
     el('checkBtn').addEventListener('click', ()=>{
